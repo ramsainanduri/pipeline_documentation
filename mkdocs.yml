@@ -1,0 +1,4 @@
+site_name: mkdocs_test
+site_url: https://github.com/ramsainanduri/mkdocs_test.git
+markdown_extensions: 
+	- tables

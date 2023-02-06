@@ -1,0 +1,14 @@
+#Basic Details of the pipeline
+pipeline: 
+  name: GMS-Myeloid Pipeline
+  version: v1.0
+  contact_person: Ram
+  location: /home/ramsainanduri/Pipelines/Validation_Documents/mkdocs_test
+  scope:  Text yet to come
+  description: This is Mk Docs pipeline. Test follows...
+  min_requirements: 
+    nextflow_version: 19
+  software_list: /home/ramsainanduri/Pipelines/Validation_Documents/list_of_softwares.tsv
+  validatation_data_path: ''
+  test_data_path: ''
+  workflow_image: ''
