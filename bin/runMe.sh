@@ -40,6 +40,7 @@ echo -e "site_name: ${github_project_name}\nsite_url: ${github_project_URL}\n" >
 grep -v "site_name\|site_url" ${template_mkdocs_yaml} >> ${local_project_location}'/mkdocs.yml'
 
 cp ${local_repo}"/../templates/requirements.txt" ${local_project_location}'/docs/'
+cp ${local_repo}"/../templates/readthedocs.yml" ${local_project_location}'/.readthedocs.yml'
 
 md_destination=${local_project_location}'/docs/index.md'
 date=$(date '+%Y%m%d')
