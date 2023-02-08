@@ -1,7 +1,7 @@
 ---
 title: 'GMS-Myeloid Pipeline'
 output: 
-  rmdformats::html_clean:
+  rmdformats::readthedown:
     toc_depth: 2
     toc_float: true
     theme: united
@@ -16,7 +16,7 @@ output:
     gallery: false
     url: blue
 
-date: '2023-02-06'
+date: '2023-02-08'
 ---
 
 
