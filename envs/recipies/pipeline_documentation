@@ -29,6 +29,8 @@ From: ubuntu:20.04
     apt-get -y install pip
     pip install mkdocs
     pip install pandas
+    pip install markdown-include
+    pip install mkdocstrings
 
     apt-get -y install r-base
 

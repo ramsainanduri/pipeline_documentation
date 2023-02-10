@@ -1,5 +1,5 @@
-site_name: Basic MkDocs Example Project
-site_url: https://github.com/Clinical-Genomics-Lund/nextflow_rnaseqfus.git
+site_name: pipeline_documentation
+site_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 theme:
   name: readthedocs
@@ -14,5 +14,5 @@ plugins:
             docstring_style: sphinx
 markdown_extensions:
   - markdown_include.include:
-      base_path: ../
+      base_path: .
   - admonition

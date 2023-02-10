@@ -92,7 +92,7 @@ echo -e "cp ${pd_path}/../templates/readthedocs.yaml ${local_project_location}/.
 echo -e "cp ${md_output} ${md_destination}" >> ${local_project_location}/run.sh
 
 echo -e "cp ${pd_path}/../templates/github_pages.template.yaml ${local_project_location}/docs/_config.yaml" >> ${local_project_location}/run.sh
-echo -e "mv ${local_project_location}/mkdocs.yml ${local_project_location}/docs/mkdocs.yaml" >> ${local_project_location}/run.sh
+#echo -e "mv ${local_project_location}/mkdocs.yml ${local_project_location}/docs/mkdocs.yaml" >> ${local_project_location}/run.sh
 
 echo -e "rm -rf ${tmp_dir}" >> ${local_project_location}/run.sh
 echo -e "rm ${md_output}" >> ${local_project_location}/run.sh
