@@ -1,5 +1,5 @@
-site_name: mkdocs_test
-site_url: https://github.com/ramsainanduri/mkdocs_test.git
+site_name: pipeline_documentation
+site_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 
 theme:

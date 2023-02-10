@@ -3,12 +3,12 @@ pipeline:
   name: GMS-Myeloid Pipeline
   version: v1.0
   contact_person: Ram
-  location: /home/ramsainanduri/Pipelines/Validation_Documents/mkdocs_test
+  location: /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation
   scope:  Text yet to come
   description: This is Mk Docs pipeline. Test follows...
   min_requirements: 
     nextflow_version: 19
-  software_list: /home/ramsainanduri/Pipelines/Validation_Documents/mkdocs_test/templates/list_of_softwares.tsv
+  software_list: /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation/templates/list_of_softwares.tsv
   validatation_data_path: ''
   test_data_path: ''
   workflow_image: ''

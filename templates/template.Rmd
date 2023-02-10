@@ -28,7 +28,7 @@ library(DT)
 library(dplyr)
 ```
 
-## Pipeline Details
+# Pipeline Details
 
 **Name:** `r params$pipeline$name`
 
@@ -38,15 +38,15 @@ library(dplyr)
 
 **Location:** `r params$pipeline$location`
 
-## Description
+# Description
 
 `r params$pipeline$description`
 
-## Minimum Requirements
+# Minimum Requirements
 
 **Nextflow version:** `r params$pipeline$min_requirements$nextflow_version`
 
-## List of Software Used
+# List of Software Used
 
 ```{r, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
 software_list = read.table(file = params$pipeline$software_list, sep = '\t', header = TRUE, stringsAsFactors = FALSE, check.names=F)

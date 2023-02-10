@@ -16,12 +16,12 @@ output:
     gallery: false
     url: blue
 
-date: '2023-02-08'
+date: '2023-02-10'
 ---
 
 
 
-## Pipeline Details
+# Pipeline Details
 
 **Name:** GMS-Myeloid Pipeline
 
@@ -29,17 +29,17 @@ date: '2023-02-08'
 
 **Contact Person:** Ram
 
-**Location:** /home/ramsainanduri/Pipelines/Validation_Documents/mkdocs_test
+**Location:** /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation
 
-## Description
+# Description
 
 This is Mk Docs pipeline. Test follows...
 
-## Minimum Requirements
+# Minimum Requirements
 
 **Nextflow version:** 19
 
-## List of Software Used
+# List of Software Used
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
