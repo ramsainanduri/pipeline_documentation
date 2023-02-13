@@ -1,0 +1,4 @@
+# Scope
+
+`r params$pipeline$scope`  
+

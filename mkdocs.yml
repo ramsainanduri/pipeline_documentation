@@ -17,3 +17,11 @@ markdown_extensions:
   - markdown_include.include:
       base_path: .
   - admonition
+
+nav:
+    - 'Pipeline Information': 'index.md'
+    - Introduction: 'introduction.md'
+    - 'Minimum Requirements': 'scope.md'
+    - Usage: 'usage.md'
+    - Profiles: 'profiles.md'
+    - Workflow: 'workflow.md'

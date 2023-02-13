@@ -1,0 +1,38 @@
+## `r profile`  
+
+**Profile Name:** `r params$pipeline$profiles[[profile]]$profile_name`  
+
+### Description  
+
+`r params$pipeline$profiles[[profile]]$profile_description`  
+
+### Usage  
+
+`r params$pipeline$profiles[[profile]]$profile_usage`  
+
+
+### Software Stack
+
+```{r, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
+software_list = read.table(file = params$pipeline$profiles[[profile]]$profile_software_list, sep = '\t', header = TRUE, stringsAsFactors = FALSE, check.names=F)
+software_list =  software_list[order(software_list$`Tool/Software`),]
+software_list$ID <- seq.int(nrow(software_list))
+software_list <- software_list %>% select(ID, everything())
+software_list$`Tool/Software` = paste('<a href = "',software_list$URL,'" target="_blank">',software_list$`Tool/Software`,'</a>',sep='')
+software_list$Reference = paste('<a href = "',software_list$Reference,'" target="_blank">open</a>',sep='')
+software_list = select(software_list, -c(URL,'Short Description'))
+kable(software_list,booktabs=TRUE,  escape=FALSE,row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover",  "condensed", "responsive"),full_width = F, position = "center")
+```  
+
+### Validation Data 
+
+To validate the pipeline, please access the validation data stored on the server using the path provided below,  
+
+**`r params$pipeline$profiles[[profile]]$profile_validatation_data_path`**  
+
+### Test Data 
+
+To test the pipeline, please access the downsampled test data stored on the server using the path provided below,  
+ 
+**`r params$pipeline$profiles[[profile]]$profile_test_data_path`**  

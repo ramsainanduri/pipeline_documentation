@@ -1,3 +1,5 @@
 tmp
 envs/*sif
 envs/*simg
+example_command.sh
+*html
