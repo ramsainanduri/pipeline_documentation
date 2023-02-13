@@ -2,8 +2,9 @@
 
 Schematic diagram showing the main steps of the analysis method followed to perform the data analysis.    
 
-```{r, echo = FALSE,message=FALSE, warning=FALSE,results='asis', out.width = "400px", out.height = "300px", fig.align="default"}
-cat("\n\n")
-cat("![](",params$pipeline$workflow,")")
-cat("\n\n")
+```{r workflow, echo = FALSE,message=FALSE, warning=FALSE,results='asis', out.width = "400px", out.height = "300px", fig.align="default"}
+#cat("\n\n")
+#cat("![](",params$pipeline$workflow,")")
+#cat("\n\n")
+htmltools::img(src = knitr::image_uri(params$pipeline$workflow), alt = 'workflow')
 ```     

@@ -3,10 +3,11 @@ site_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 
 theme:
-  name: readthedocs
+  name: mkdocs
   highlightjs: true
 plugins:
-  - search
+  - search:
+      indexing: 'full'
   - mkdocstrings:
       handlers:
         # See: https://mkdocstrings.github.io/python/usage/
@@ -14,9 +15,14 @@ plugins:
           options:
             docstring_style: sphinx
 markdown_extensions:
+  - toc:
+      permalink: True
   - markdown_include.include:
       base_path: .
   - admonition
+
+extra:
+  generator: false
 
 nav:
     - 'Pipeline Information': 'index.md'
@@ -25,3 +31,5 @@ nav:
     - Usage: 'usage.md'
     - Profiles: 'profiles.md'
     - Workflow: 'workflow.md'
+  
+copyright: Copyright &copy; 2023 Ram Sai Nanduri
