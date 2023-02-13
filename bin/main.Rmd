@@ -33,9 +33,11 @@ source(paste(root,'bin/functions.R', sep='/'))
 
 
 ```{r logo, echo=FALSE}
-htmltools::img(src = knitr::image_uri(params$pipeline$logo), 
-               alt = 'logo', 
-               style = 'position:absolute; top:0; left:0; padding:10px;')
+#htmltools::img(src = knitr::image_uri(params$pipeline$logo), 
+#               alt = 'logo', 
+#               style = 'position:absolute; top:0; left:0; padding:10px;')
+#Still need to work on this
+a = 1
 ```
 
 ```{r,echo = FALSE}
