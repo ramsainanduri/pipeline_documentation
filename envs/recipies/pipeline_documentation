@@ -1,0 +1,56 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get -y update
+    apt-get -y install language-pack-sv-base
+    echo 'export LANG=sv_SE.UTF-8' >>$SINGULARITY_ENVIRONMENT
+
+    apt-get -y install gnupg
+    apt-get -y install software-properties-common apt-utils
+    apt-get -y update
+
+    apt-get -y upgrade
+    apt-get install -y vim nano less 
+
+    apt-get -y install libcurl4-openssl-dev
+    apt-get -y install libssl-dev
+    apt-get -y install libxml2-dev
+    apt-get -y install pandoc
+    apt-get -y install texlive-latex-base
+    apt-get -y install texlive-fonts-recommended
+    apt-get -y install texlive-fonts-extra
+
+    apt-get -y install texlive-latex-extra
+    apt-get -y install curl wget
+    apt-get -y install libfontconfig1-dev
+    apt-get -y install pip
+    pip install mkdocs
+    pip install pandas
+    pip install markdown-include
+    pip install mkdocstrings
+
+    apt-get -y install r-base
+
+    R --slave -e 'install.packages("rmarkdown", repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("kableExtra",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("knitr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("forcats",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("stringr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("dplyr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("purrr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("readr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("tidyr",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("rlang",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("tibble",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("tidyverse",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("ggplot2",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("DT",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("readxl",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("rmdformats",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("plotly",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("reshape2",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'install.packages("cowplot",  repos="https://ftp.acc.umu.se/mirror/CRAN/")'
+    R --slave -e 'tinytex::install_tinytex(force = TRUE)'

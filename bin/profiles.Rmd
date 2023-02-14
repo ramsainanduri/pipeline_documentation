@@ -1,0 +1,15 @@
+# Profiles
+
+```{r profiles, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
+profiles=get_unique_keys(params$pipeline$profiles)
+res <- vector(mode = "list", length = length(profiles))
+
+
+for (i in 1:length(profiles)) {
+  profile = profiles[i]
+  #res[i] <- knitr::knit_child(paste(root,'bin/profiles_child.Rmd',sep='/'), quiet = TRUE, envir = environment())
+  res[i] <- knitr::knit_child('profiles_child.Rmd', quiet = TRUE, envir = environment())
+}
+
+cat(unlist(res), sep = '\n')
+```  

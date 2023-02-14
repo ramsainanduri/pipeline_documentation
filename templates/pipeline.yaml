@@ -1,0 +1,52 @@
+#Basic Details of the pipeline
+pipeline: 
+  logo: 'https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/template_logo.png'
+  info: 
+    name: Pipeline Documentation
+    version: v1.0
+    author: Ram Sai Nanduri
+    author_email: Ram.Nanduri@skane.se
+    git_repo: https://github.com/ramsainanduri/pipeline_documentation
+    server_location: /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation
+  introduction: |  
+    This automatic documentation generation is a time-saving tool for developers and teams, as it eliminates the need to manually create and maintain documentation. It also helps ensure that documentation is up-to-date and consistent, as changes made to the pipeline.yaml file used for the document updation in a simple and easy way. 
+  
+    The pipeline.yaml file contains all the relevant information about the pipeline or tool, including the description, inputs, outputs, parameters, and usage. This information is used to generate the HTML and MD documents, which provide clear and detailed information about the pipeline or tool.
+  
+    The HTML document is visually appealing and easy to navigate, with links to different sections and a search bar for quickly finding specific information. The MD document is plain text, but can be formatted with Markdown syntax for a more readable and structured format. The MD document can be uploaded to a readthedocs server for online documentation. It uses the mkdocs format, with the required "docs" folder and related files in the project root folder. 
+  
+    Additionally, the generated documentation also includes a table of contents for easy navigation, and sections for examples. 
+  
+    Overall, this repo helps improve the documentation process for pipelines and tools, making it easier for others to understand and use them. 
+  scope:  |
+    This pipeline has been set in place to generate automatic documentation both online and offline for any pipeline or a project.
+  min_requirements: # Can be multiple requirements but only text values are accepted
+    configs: "pipeline.yaml, list_of_softwares.tsv"
+    os: "POSIX based"
+    singularity: ">= 3.8.0"
+  usage: |
+    To generate offline HTML documentation and an online Markdown(MD) file in your project folder, clone the repo and execute the bash script bin/runMe.sh.  
+
+    To learn how to parse parameters for the script, run, 
+    
+    `bin/runMe.sh -h`
+
+    To create an example script using the provided template files in the repo location, run,
+
+    `bin/runMe.sh -e`
+  profiles: #Can be multiple profiles with different names
+    profile1:
+      profile_name: 'Profile 1'
+      profile_description: 'Profile 1 is used for Solid Panel'
+      profile_usage: 'add --profile "solid" to the nextflow command'
+      profile_software_list: /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation/templates/list_of_softwares.tsv
+      profile_validatation_data_path: '/full/path/to/profile1/validation/data'
+      profile_test_data_path: '/full/path/to/profile1/test/data'
+    profile2:
+      profile_name: 'Profile 2'
+      profile_description: 'Profile 1 is used for AML Panel'
+      profile_usage: 'add --profile "myeloid" to the nextflow command'
+      profile_software_list: /home/ramsainanduri/Pipelines/Validation_Documents/pipeline_documentation/templates/list_of_softwares.tsv
+      profile_validatation_data_path: '/full/path/to/profile2/validation/data'
+      profile_test_data_path: '/full/path/to/profile2/test/data'
+  workflow: 'https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/template_workflow.png'

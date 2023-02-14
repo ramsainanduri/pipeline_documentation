@@ -1,12 +1,17 @@
-site_name: mkdocs_test
-site_url: https://github.com/ramsainanduri/mkdocs_test.git
+site_name: pipeline_documentation
+site_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
+github_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 theme:
   name: readthedocs
   highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
 plugins:
-  - search
+  - search:
+      indexing: 'full'
   - mkdocstrings:
       handlers:
         # See: https://mkdocstrings.github.io/python/usage/
@@ -14,6 +19,21 @@ plugins:
           options:
             docstring_style: sphinx
 markdown_extensions:
+  - toc:
+      permalink: True
   - markdown_include.include:
       base_path: .
   - admonition
+
+extra:
+  generator: false
+
+nav:
+    - 'Pipeline Information': 'index.md'
+    - Introduction: 'introduction.md'
+    - 'Minimum Requirements': 'scope.md'
+    - Usage: 'usage.md'
+    - Profiles: 'profiles.md'
+    - Workflow: 'workflow.md'
+  
+copyright: Copyright &copy; 2023 Ram Sai Nanduri

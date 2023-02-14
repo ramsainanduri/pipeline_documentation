@@ -1,0 +1,3 @@
+# Introduction  
+
+`r params$pipeline$introduction`  
