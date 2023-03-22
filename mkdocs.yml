@@ -5,6 +5,7 @@ github_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 theme:
   name: readthedocs
+  logo: https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/rs-logo-color.svg
   highlightjs: true
   hljs_languages:
     - yaml

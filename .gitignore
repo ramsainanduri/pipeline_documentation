@@ -3,3 +3,5 @@ envs/*sif
 envs/*simg
 example_command.sh
 *html
+todo.txt
+bin/__pycache__/
