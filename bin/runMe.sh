@@ -1,16 +1,18 @@
 #!/usr/bin/bash
 
 ################################################################################
-version='v1.0'
+version=$(cat $(dirname $0)/version.txt)
 author='Ram Sai Nanduri'
 git_repo='https://github.com/ramsainanduri/pipeline_documentation.git'
 pd_path=$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P |sed 's/\/bin$//g')
 example_command="bash $(realpath $0) -g ${git_repo} -o ${pd_path}/pipeline_documentation.html -y ${pd_path}/templates/pipeline.yaml -s ${pd_path}/envs/pipeline_documentation_v1.0.sif"
 ################################################################################
 
+
 ################################################################################
 # Help                                                                         #
 ################################################################################
+
 Help()
 {
     # Display Help
@@ -59,7 +61,7 @@ done
 date=$(date '+%Y%m%d')
 rmd_file=${pd_path}"/bin/main.Rmd"
 template_mkdocs_yaml=${pd_path}"/templates/template.mkdocs.yaml"
-local_project_location=$(grep 'location:' ${yaml_file} | sed 's/server_location:.* //g' | sed 's/ //g')
+local_project_location=$(grep 'location:' ${yaml_file} | sed 's/server_location:.* //g' | sed 's/ //g' | sed "s/\'//g" |sed 's/\"//g')
 github_project_name=$(basename ${github_project_URL} | sed 's/.git//g')
 tmp_dir=${local_project_location}"/tmp"
 md_output=$(echo ${output_file} |sed 's/.html$/.md/g')
@@ -70,11 +72,19 @@ binds=${pd_path}','${local_project_location}
 singularity_cmd='singularity run --bind'
 
 #main Rmd cmd
-rmd_cmd='R -e "library(yaml);params=yaml::read_yaml('\'${yaml_file}\'');root='\'${pd_path}/\'';params;rmarkdown::render('\'$rmd_file\'', output_file='\'${output_file}\'', intermediates_dir='\'${tmp_dir}\'', knit_root_dir='\'${tmp_dir}\'', clean=F, envir = parent.frame())"'
+
+versions_yaml=$(grep 'software_stack:' ${yaml_file} | rev |cut -f1 -d' ' |rev)
+tool_description_file=${pd_path}"/bin/tool_descriptions.tsv"
+mapped_tools_versions=${tmp_dir}"/tool_versions.mapped.tsv"
+tools_mapping_cmd="python3 "${pd_path}"/bin/map_software_stack.py -i "${versions_yaml}" -td "${tool_description_file}" -o "${mapped_tools_versions}
+
+
+rmd_cmd='R -e "library(yaml);params=yaml::read_yaml('\'${yaml_file}\'');root='\'${pd_path}/\'';mapped_tools_versions='\'${mapped_tools_versions}\'';params;mapped_tools_versions;rmarkdown::render('\'$rmd_file\'', output_file='\'${output_file}\'', intermediates_dir='\'${tmp_dir}\'', knit_root_dir='\'${tmp_dir}\'', clean=F, envir = parent.frame())"'
 
 #Generate script file
 rm ${local_project_location}/run.sh
 echo -e "mkdir -p ${tmp_dir}" >> ${local_project_location}/run.sh
+echo -e "${tools_mapping_cmd}" >> ${local_project_location}/run.sh
 echo -e "cp ${pd_path}/bin/*Rmd ${tmp_dir}" >> ${local_project_location}/run.sh
 echo -e "\n${rmd_cmd}\n" >> ${local_project_location}/run.sh
 

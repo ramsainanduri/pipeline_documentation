@@ -4,6 +4,7 @@ github_url: https://github.com/ramsainanduri/pipeline_documentation.git
 
 theme:
   name: readthedocs
+  logo: https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/rs-logo-color.svg
   highlightjs: true
   hljs_languages:
     - yaml
@@ -30,9 +31,14 @@ extra:
 nav:
     - 'Pipeline Information': 'index.md'
     - Introduction: 'introduction.md'
-    - 'Minimum Requirements': 'scope.md'
+    - Scope: 'scope.md'
+    - 'Input Data': 'input_data.md'
+    - 'Output Data': 'output_data.md'
+    - 'Minimum Requirements': 'min_requirements.md'
     - Usage: 'usage.md'
+    - 'Pipeline Components': 'pipeline_components.md'
+    - 'Software Stack': 'software_stack.md'
     - Profiles: 'profiles.md'
     - Workflow: 'workflow.md'
   
-copyright: Copyright &copy; 2023 Ram Sai Nanduri
+copyright: Copyright &copy; 2023 | Center for Molecular Diagnostics (CMD) | Region Skåne | Sölvegatan 23B, Lund.

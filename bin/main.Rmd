@@ -1,5 +1,7 @@
 ---
-title: '`r params$pipeline$info$name`'
+title: |
+  ![](`r params$pipeline$logo`){width=0.5in} 
+  `r params$pipeline$info$name`
 output: 
   rmdformats::readthedown:
     toc_depth: 5
@@ -28,17 +30,10 @@ library(kableExtra)
 library(DT)
 library(dplyr)
 library(htmltools)
+library(stringr)
 source(paste(root,'bin/functions.R', sep='/'))
 ```  
 
-
-```{r logo, echo=FALSE}
-#htmltools::img(src = knitr::image_uri(params$pipeline$logo), 
-#               alt = 'logo', 
-#               style = 'position:absolute; top:0; left:0; padding:10px;')
-#Still need to work on this
-a = 1
-```
 
 ```{r,echo = FALSE}
 table_no = 1
@@ -55,7 +50,6 @@ for (key in params_keys) {
     next
   } else { 
     if (params$pipeline[key] != '') {
-      #child_rmds = append(child_rmds, paste(root,'/bin/', key,'.Rmd', sep=''))
       child_rmds = append(child_rmds, paste(key,'.Rmd', sep=''))
     }
   }
@@ -68,7 +62,6 @@ for (key in params_keys) {
 for (i in 1:length(child_rmds)) {
 
   child_env <- new.env()
-  child_env$species <- "Adelie"
 
   child_res <- knitr::knit_child(child_rmds[i], envir = child_env,  quiet = TRUE)
 
