@@ -78,6 +78,11 @@ tool_description_file=${pd_path}"/bin/tool_descriptions.tsv"
 mapped_tools_versions=${tmp_dir}"/tool_versions.mapped.tsv"
 tools_mapping_cmd="python3 "${pd_path}"/bin/map_software_stack.py -i "${versions_yaml}" -td "${tool_description_file}" -o "${mapped_tools_versions}
 
+#Generate script file
+rm ${local_project_location}/run.sh
+echo -e "mkdir -p ${tmp_dir}" >> ${local_project_location}/run.sh
+echo -e "cp ${pd_path}/bin/*Rmd ${tmp_dir}" >> ${local_project_location}/run.sh
+echo -e "\n${rmd_cmd}\n" >> ${local_project_location}/run.sh
 
 rmd_cmd='R -e "library(yaml);params=yaml::read_yaml('\'${yaml_file}\'');root='\'${pd_path}/\'';mapped_tools_versions='\'${mapped_tools_versions}\'';params;mapped_tools_versions;rmarkdown::render('\'$rmd_file\'', output_file='\'${output_file}\'', intermediates_dir='\'${tmp_dir}\'', knit_root_dir='\'${tmp_dir}\'', clean=F, envir = parent.frame())"'
 
