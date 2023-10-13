@@ -7,7 +7,6 @@ res <- vector(mode = "list", length = length(profiles))
 
 for (i in 1:length(profiles)) {
   profile = profiles[i]
-  #res[i] <- knitr::knit_child(paste(root,'bin/profiles_child.Rmd',sep='/'), quiet = TRUE, envir = environment())
   res[i] <- knitr::knit_child('profiles_child.Rmd', quiet = TRUE, envir = environment())
 }
 

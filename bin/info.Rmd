@@ -2,10 +2,14 @@
 # Pipeline Info  
 
 ```{r info, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
-info_df = data.frame(t(data.frame(params$pipeline$info)))
+info_df = as.data.frame(t(data.frame(params$pipeline$info)))
+#new_variables=c()
+#for (i in rownames(info_df)) {
+#  new_variables=c(new_variables,camel(i))
+#}
 info_df = cbind(rownames(info_df),info_df)
 colnames(info_df) = c('Info','Description')
-info_df$Info = camel(info_df$Info)
+info_df$Info <- sapply(info_df$Info, camel)
 info_df$Info = paste('**',info_df$Info,'**',sep='')
 kable(info_df,booktabs=TRUE,  escape=FALSE,row.names=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover",  "condensed", "responsive"),full_width = F, position = "center")

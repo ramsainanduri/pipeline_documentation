@@ -1,8 +1,12 @@
-camel <- function(x){ #function for camel case
-    capit <- function(x) paste0(toupper(substring(x, 1, 1)), substring(x, 2, nchar(x)))
-    sapply(strsplit(as.character(x), "\\."), function(x) paste(capit(x), collapse=""))
-}
+#camel <- function(x){ #function for camel case
+#      str_to_title((paste(unlist(str_split(x, '_')), collapse=' '))) 
+#}
 
+
+camel <- function(x) {
+  words <- unlist(str_split(x, '_'))
+  new_words <- str_to_title(paste(words, collapse = ' '))
+}
 
 round_df <- function(df, digits) {
   nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))

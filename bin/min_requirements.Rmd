@@ -1,11 +1,12 @@
 # Minimum Requirements  
 
-```{r, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
-min_req_df = data.frame(t(data.frame(params$pipeline$min_requirements)))
-min_req_df = cbind(rownames(min_req_df),min_req_df)
-colnames(min_req_df) = c('Name','Description')
-min_req_df$Name = camel(min_req_df$Name)
-min_req_df$Name = paste('**',min_req_df$Name,'**',sep='')
-kable(min_req_df,booktabs=TRUE,  escape=FALSE,row.names=FALSE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover",  "condensed", "responsive"),full_width = F, position = "center")
-```  
+```{r Minimum Requirements, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
+
+mr_keys=get_unique_keys(params$pipeline$min_requirements)
+
+for (mr_element in mr_keys) {
+    new_mr_element_name = camel(mr_element)
+    cat(paste('**', new_mr_element_name, '**: ', params$pipeline$min_requirements[[mr_element]], sep=''), sep = '\n')
+    cat('\n')
+}
+```

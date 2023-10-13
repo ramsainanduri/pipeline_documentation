@@ -1,4 +1,12 @@
 # Scope
 
-`r params$pipeline$scope`  
+```{r Scope, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
+scope_keys=get_unique_keys(params$pipeline$scope)
 
+for (scope_element in scope_keys) {
+    new_scope_element_name = camel(scope_element)
+    cat(paste('## ', new_scope_element_name, sep=''), sep = '\n')
+    cat('\n')
+    cat(params$pipeline$scope[[scope_element]], sep = '\n')
+}
+```

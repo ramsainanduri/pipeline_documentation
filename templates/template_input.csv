@@ -1,0 +1,2 @@
+sample_id,type,assay,platform,read1,read2
+example,template,documentation,mkdocs,example.1.fastq.gz,example.2.fastq.gz

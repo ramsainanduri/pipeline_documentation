@@ -1,0 +1,30 @@
+# Output Data
+
+```{r Output Data, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
+od_keys=get_unique_keys(params$pipeline$output_data)
+
+for (od_element in od_keys) {
+
+    if (od_element == 'output_desc') {
+
+        cat(params$pipeline$output_data$output_desc, sep='\n')
+
+    } else if(od_element == 'output_files'){
+
+        cd_df = data.frame(t(data.frame(params$pipeline$output_data$output_files)))
+        cd_df = cbind(rownames(cd_df),cd_df)
+        colnames(cd_df) = c('Output File Type','Description')
+        cat('Table: Output files and their description', sep='\n')
+        cat('\n')
+        print(kable(cd_df,booktabs=TRUE,  escape=FALSE,row.names=FALSE) %>%
+            kable_styling(bootstrap_options = c("striped", "hover",  "condensed", "responsive"),full_width = F, position = "center"))
+
+    } else {
+
+        new_od_element_name = camel(od_element)
+        cat(paste('## ', new_od_element_name, sep=''), sep = '\n')
+        cat('\n')
+        cat(params$pipeline$output_data[[od_element]], sep = '\n')
+    }
+}
+```
