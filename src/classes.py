@@ -289,7 +289,7 @@ class MkDocsProfileGenerator(FileParser):
         if self.mkdocs_cfg:
             mkdocs_final.update(self.mkdocs_cfg)
 
-        mkdocs_yml_path = os.path.join(self.project_dir, 'mkdocs.yml')
+        mkdocs_yml_path = os.path.join(self.project_dir, 'mkdocs.yaml')
         with open(mkdocs_yml_path, 'w') as mkdocs_yml_file:
             yaml.dump(mkdocs_final, mkdocs_yml_file, default_flow_style=False, sort_keys=False)
 
