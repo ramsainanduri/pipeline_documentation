@@ -118,7 +118,7 @@ class FileParser:
         for process, tools in versions_dict.items():
             for tool, version in tools.items():
                 if str(version).startswith('v') or str(version).startswith('V'):
-                    version = version
+                    continue
                 else:
                     version = f"v{version}"
                 versions_list.append({'Process': process, 'Tool': tool, 'Version': version})
@@ -132,6 +132,9 @@ class FileParser:
 
         # Format the "Tool" column as a link
         result_df['Tool'] = result_df.apply(lambda row: f'[{row["Tool"]}]({row["URL"]})', axis=1)
+
+        # Remove duplicate names in the "Process" column and replace them with empty values
+        result_df['Process'] = result_df['Process'].where(~result_df['Process'].duplicated(), '')
 
         # Reorder the columns as per your desired output
         result_df = result_df[self.tool_col_headers]

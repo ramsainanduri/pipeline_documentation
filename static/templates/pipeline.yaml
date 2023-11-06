@@ -4,13 +4,9 @@
 
 # The pipeline documentation template consists of the following sections:
 #   - pipeline: Information about the pipeline, such as the name, version, and author
-#   - sections: A list of sections for the documentation, such as Introduction, Scope, and Input Data
+#   - sections: A list of sections for the documentation, such as Introduction, Scope, Min_requirements, Usage, Pipeline Components, etc.
 #   - profiles: A list of profiles for the documentation, such as solid, and myeloid
 #   - workflow: A link to the workflow diagram for the pipeline
-
-# The pipeline section consists of the following keys:
-#   - logo: The path to the logo for the pipeline
-#   - info: Information about the pipeline, such as the name, version, and author
 
 pipeline:
   logo: static/images/rs-logo-color.svg
@@ -175,6 +171,9 @@ profiles:
         content:
           BAM: A BAM file is a compressed binary file format used to store and index high-throughput sequencing data, such as DNA sequence reads aligned to a reference genome
           VCF: A VCF file is a text file format used to store and annotate genetic variation data, such as single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels), identified from sequencing data.
+      - name: Software Versions
+        type: versions
+        content: 'static/profiles/myeloid/versions.yml'
   - name: Solid
     headings:
       - name: Description
@@ -200,6 +199,9 @@ profiles:
           VCF: A VCF file is a text file format used to store and annotate genetic variation data, such as single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels), identified from sequencing data.
           HTML_Report: An HTML documentation report is a text-based file format used to present information in a web browser, including text, images, and hyperlinks, typically used for displaying project documentation and results
           Markdown_Files: A Markdown file is a lightweight markup language used to format and structure plain text documents, often used for creating documentation, README files, and notes
+      - name: Software Versions
+        type: versions
+        content: 'static/profiles/solid/versions.yml'
 workflows:
   - name: Workflow Diagram
     headings:
