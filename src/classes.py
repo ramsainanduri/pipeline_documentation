@@ -131,7 +131,8 @@ class FileParser:
         result_df['Process'].fillna('', inplace=True)
 
         # Format the "Tool" column as a link
-        result_df['Tool'] = result_df.apply(lambda row: f'[{row["Tool"]}]({row["URL"]})', axis=1)
+        #result_df['Tool'] = result_df.apply(lambda row: f'[{row["Tool"]}]({row["URL"]})', axis=1)
+        result_df['Tool'] = result_df.apply(lambda row: f'<a href="{row.URL}" target="_blank">{row.Tool}</a>', axis=1)
 
         # Remove duplicate names in the "Process" column and replace them with empty values
         result_df['Process'] = result_df['Process'].where(~result_df['Process'].duplicated(), '')
