@@ -1,8 +1,10 @@
 ## Solid
 
+
 ### Description
 
 The input data for the pipeline consists of fastq files. However, for the pipeline to consume the data, it needs to be provided in the form of a CSV file that includes metadata...
+
 
 
 ### Input CSV
@@ -31,6 +33,7 @@ The input data for the pipeline consists of fastq files. However, for the pipeli
   </tbody>
 </table>
 </div>
+
 ### Column Descriptions
 
 - **sample_id:** Text representing the name or id of the sample being analyzed
@@ -40,12 +43,14 @@ The input data for the pipeline consists of fastq files. However, for the pipeli
 - **read1:** Full path to the read 1 fastq file
 - **read2:** Full path to the read 2 fastq file
 
+
 ### Output Files
 
 - **BAM:** A BAM file is a compressed binary file format used to store and index high-throughput sequencing data, such as DNA sequence reads aligned to a reference genome
 - **VCF:** A VCF file is a text file format used to store and annotate genetic variation data, such as single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels), identified from sequencing data.
 - **HTML_Report:** An HTML documentation report is a text-based file format used to present information in a web browser, including text, images, and hyperlinks, typically used for displaying project documentation and results
 - **Markdown_Files:** A Markdown file is a lightweight markup language used to format and structure plain text documents, often used for creating documentation, README files, and notes
+
 
 ### Software Versions
 
@@ -316,7 +321,7 @@ The input data for the pipeline consists of fastq files. However, for the pipeli
       <td>GENEFUSE</td>
       <td><a href="nan" target="_blank">genefuse</a></td>
       <td>v0.8.0</td>
-      <td>NaN</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>GENEFUSE_JSON_TO_VCF</td>
@@ -406,7 +411,7 @@ The input data for the pipeline consists of fastq files. However, for the pipeli
       <td>MSISENSOR</td>
       <td><a href="nan" target="_blank">msisensor-pro</a></td>
       <td>v1.2.0</td>
-      <td>NaN</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>PON_FILTER</td>
@@ -418,7 +423,7 @@ The input data for the pipeline consists of fastq files. However, for the pipeli
       <td>SCARHRD</td>
       <td><a href="nan" target="_blank">Rscript</a></td>
       <td>v4.1.0</td>
-      <td>NaN</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>SENTIEON_QC</td>

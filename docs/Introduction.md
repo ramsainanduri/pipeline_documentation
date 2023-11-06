@@ -1,5 +1,6 @@
 # Introduction
 
+
 ## Introduction
 
 This automatic documentation generation is a time-saving tool for developers and teams, as it eliminates the need to manually create and maintain documentation. It also helps ensure that documentation is up-to-date and consistent, as changes made to the pipeline.yaml file used for the document updation in a simple and easy way. 

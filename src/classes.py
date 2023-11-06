@@ -137,6 +137,9 @@ class FileParser:
         # Remove duplicate names in the "Process" column and replace them with empty values
         result_df['Process'] = result_df['Process'].where(~result_df['Process'].duplicated(), '')
 
+        # Replace NaN values with "-"
+        result_df.fillna('-', inplace=True)
+
         # Reorder the columns as per your desired output
         result_df = result_df[self.tool_col_headers]
 
@@ -207,7 +210,7 @@ class MkDocsProfileGenerator(FileParser):
                     heading_content = heading.get('content')
 
                     if heading_name and heading_type:
-                        section_file.write(f"{'#' * (heading_level + 1)} {heading_name}\n\n")
+                        section_file.write(f"\n{'#' * (heading_level + 1)} {heading_name}\n\n")
 
                         if heading_type == 'text':
                             section_file.write(f'{heading_content}\n\n')
