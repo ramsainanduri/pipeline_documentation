@@ -1,0 +1,210 @@
+# This code uses version 1.2 of the YAML specification.
+# YAML is a human-readable data serialization format that is often used for configuration files.
+# For more information, see https://yaml.org/spec/1.2/spec.html
+
+# The pipeline documentation template consists of the following sections:
+#   - pipeline: Information about the pipeline, such as the name, version, and author
+#   - sections: A list of sections for the documentation, such as Introduction, Scope, Min_requirements, Usage, Pipeline Components, etc.
+#   - profiles: A list of profiles for the documentation, such as solid, and myeloid
+#   - workflow: A link to the workflow diagram for the pipeline
+
+pipeline:
+  logo: static/images/rs-logo-color.svg
+  info:
+    name: Pipeline Documentation
+    version: v1.1.0
+    author: Ram Sai Nanduri
+    author_email: Ram.Nanduri@skane.se
+    git_repo: https://github.com/ramsainanduri/pipeline_documentation
+
+# The sections section consists of a list of sections for the documentation, such as Introduction, Scope, and Input Data, pipeline components, etc.
+sections:
+  - name: Introduction
+    headings:
+      - name: Introduction
+        type: text
+        content: |
+              This automatic documentation generation is a time-saving tool for developers and teams, as it eliminates the need to manually create and maintain documentation. It also helps ensure that documentation is up-to-date and consistent, as changes made to the pipeline.yaml file used for the document updation in a simple and easy way. 
+  
+              The pipeline.yaml file contains all the relevant information about the pipeline or tool, including the description, inputs, outputs, parameters, and usage. This information is used to generate the HTML and MD documents, which provide clear and detailed information about the pipeline or tool.
+            
+              The HTML document is visually appealing and easy to navigate, with links to different sections and a search bar for quickly finding specific information. The MD document is plain text, but can be formatted with Markdown syntax for a more readable and structured format. The MD document can be uploaded to a readthedocs server for online documentation. It uses the mkdocs format, with the required "docs" folder and related files in the project root folder. 
+            
+              Additionally, the generated documentation also includes a table of contents for easy navigation, and sections for examples. 
+            
+              Overall, this repo helps improve the documentation process for pipelines and tools, making it easier for others to understand and use them. 
+  - name: Scope
+    headings:
+      - name: Purpose
+        type: text
+        content: |
+          The program aims to simplify the process of creating and maintaining documentation for software projects using MkDocs and Read the Docs.
+      - name: Audience
+        type: text
+        content: |
+          The program is designed for developers, technical writers, and project managers who want to create high-quality documentation...
+      - name: Functionality
+        type: text
+        content: |
+          The program will automatically generate documentation for a software project using the MkDocs framework...
+      - name: Features
+        type: list
+        content:
+          - Automated creation of documentation using MkDocs
+          - Integration with Read the Docs for hosting and management of documentation sites
+          - Customizable templates for documentation sites
+          - Support for multiple documentation versions and languages
+          - Integration with source control systems such as Git
+      - name: Technology Stack
+        type: text
+        content: |
+          The program will be developed using Python and will use the MkDocs and Read the Docs APIs to generate and host documentation sites...
+      - name: Limitations
+        type: text
+        content: |
+          The program may be limited by the capabilities of MkDocs and Read the Docs, and may not be suitable for projects with complex documentation requirements...
+      - name: Maintenance and Support
+        type: text
+        content: |
+          The program will be maintained and supported by the development team, who will provide regular updates and bug fixes. Documentation and user support will also be provided...
+      - name: Expected Outcomes
+        type: text
+        content: |
+          The program is expected to simplify the process of creating and maintaining documentation, reduce the amount of time and effort required to create documentation sites, and improve the overall quality of documentation for software projects...
+  - name: Min_requirements
+    headings:
+      - name: Operating System
+        type: text
+        content: |
+          The pipeline is designed to run on Linux operating systems, such as Ubuntu and CentOS...
+      - name: Number of CPUs
+        type: text
+        content: |
+          The pipeline requires at least 4 CPUs to run efficiently...
+      - name: Memory
+        type: text
+        content: |
+          The pipeline requires at least 16 GB of memory to run efficiently...
+      - name: Disk Space
+        type: text
+        content: |
+          The pipeline requires at least 100 GB of disk space to run efficiently...
+      - name: Singularity
+        type: text
+        content: |
+          The pipeline requires Singularity version 3.0 or higher to run efficiently...
+      - name: Python
+        type: text
+        content: |
+          The pipeline requires Python version 3.6 or higher to run efficiently...
+  - name: Usage
+    headings:
+      - name: How to run the pipeline
+        type: text
+        content: |
+          To generate online Markdown(MD) file in your project folder, clone the repo and execute the python script src/main.py.
+
+          To learn how to parse parameters for the script, run, 
+          
+          `python3 src/main.py -h`
+
+          To create an example script using the provided template files in the repo location, run,
+
+          `python3 src/main.py -e`
+  - name: Pipeline Components
+    headings:
+      - name: Pipeline Components Description
+        type: text
+        content: |
+          To automate the documentation for a pipeline, the following pipeline components are included.
+      - name: Data Retrieval
+        type: text
+        content: |
+          This step involves retrieving data related to the pipeline, such as the code, input data, and output data.
+      - name: Parsing
+        type: text
+        content: |
+          This step involves parsing the code and the input and output data to extract relevant information, such as the pipeline components, their parameters, and their inputs and outputs.
+      - name: Template Generation
+        type: text
+        content: |
+          This step involves generating a template for the documentation based on the parsed information. The template should include sections for the pipeline components, their descriptions, their parameters, and their inputs and outputs.
+      - name: Documentation Generation
+        type: text
+        content: |
+          This step involves generating the actual documentation by populating the parsed information in respective markdown files. The documentation should be generated in a format that is easily readable and accessible.
+      - name: Version Control
+        type: text
+        content: |
+          This step involves using version control software, such as Git, to track changes to the documentation over time, and to maintain a history of the documentation.
+      - name: Workflow Management
+        type: text
+        content: |
+          This step involves using workflow management software, such as Snakemake or Nextflow, to automate the pipeline components and manage dependencies between the components.
+      - name: Maintenance and Support
+        type: text
+        content: |
+          This step involves maintaining and supporting the documentation over time, including regular updates and bug fixes.
+
+# This section consists of all the profiles for this pipeline
+profiles:
+  - name: Myeloid
+    headings:
+      - name: Description
+        type: text
+        content: |
+          The input data for the pipeline consists of fastq files. However, for the pipeline to consume the data, it needs to be provided in the form of a CSV file that includes metadata...
+      - name: Input CSV
+        type: file
+        content: 'static/profiles/myeloid/input.csv'
+      - name: Column Descriptions
+        type: dictionary
+        content:
+          sample_id: Text representing the name or id of the sample being analyzed
+          type: Type of the sample, e.g., tumor or normal
+          assay: Assay of the sample, e.g., tumorWGS, myeloid, solidtumor, etc.
+          platform: Name of the platform used for sequencing, e.g., illumina
+          read1: Full path to the read 1 fastq file
+          read2: Full path to the read 2 fastq file
+      - name: Output Files
+        type: dictionary
+        content:
+          BAM: A BAM file is a compressed binary file format used to store and index high-throughput sequencing data, such as DNA sequence reads aligned to a reference genome
+          VCF: A VCF file is a text file format used to store and annotate genetic variation data, such as single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels), identified from sequencing data.
+      - name: Software Versions
+        type: versions
+        content: 'static/profiles/myeloid/versions.yml'
+  - name: Solid
+    headings:
+      - name: Description
+        type: text
+        content: |
+          The input data for the pipeline consists of fastq files. However, for the pipeline to consume the data, it needs to be provided in the form of a CSV file that includes metadata...
+      - name: Input CSV
+        type: file
+        content: 'static/profiles/solid/input.csv'
+      - name: Column Descriptions
+        type: dictionary
+        content:
+          sample_id: Text representing the name or id of the sample being analyzed
+          type: Type of the sample, e.g., tumor or normal
+          assay: Assay of the sample, e.g., tumorWGS, myeloid, solidtumor, etc.
+          platform: Name of the platform used for sequencing, e.g., illumina
+          read1: Full path to the read 1 fastq file
+          read2: Full path to the read 2 fastq file
+      - name: Output Files
+        type: dictionary
+        content:
+          BAM: A BAM file is a compressed binary file format used to store and index high-throughput sequencing data, such as DNA sequence reads aligned to a reference genome
+          VCF: A VCF file is a text file format used to store and annotate genetic variation data, such as single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels), identified from sequencing data.
+          HTML_Report: An HTML documentation report is a text-based file format used to present information in a web browser, including text, images, and hyperlinks, typically used for displaying project documentation and results
+          Markdown_Files: A Markdown file is a lightweight markup language used to format and structure plain text documents, often used for creating documentation, README files, and notes
+      - name: Software Versions
+        type: versions
+        content: 'static/profiles/solid/versions.yml'
+workflows:
+  - name: Workflow Diagram
+    headings:
+      - name: Workflow Flowchart
+        type: image
+        content: https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/template_workflow.png

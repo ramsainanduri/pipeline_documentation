@@ -1,0 +1,112 @@
+AGGREGATE_VCFS:
+  perl: 5.26.2
+ANNOTATE_VEP:
+  perl: 5.26.1
+BIOMARKERS_TO_JSON:
+  python: 3.9.2
+BQSR_UMI:
+  sentieon: '202112'
+BWA_UMI:
+  bwa: 0.7.17-r1188
+  sentieon: '202112'
+CNVKIT2SCARHRD:
+  perl: 5.26.2
+CNVKIT_BACKBONE:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_BATCH:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_CALL:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_CALL_TC:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_EXONS:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_GENS:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_PLOT:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CONCATENATE_VCFS:
+  vcftools: 0.1.16
+  vt-decompose: '0.5'
+  vt-normalize: '0.5'
+CONTAMINATION:
+  perl: 5.28.1
+COYOTE_SEGMENTS:
+  perl: 5.26.2
+CUSTOM_DUMPSOFTWAREVERSIONS:
+  python: 3.11.0
+  yaml: '6.0'
+FFPE_PON_FILTER:
+  perl: 5.26.2
+FILTER_FOR_CNV:
+  bedtools: 2.30.0
+  bgzip: '1.12'
+  perl: 5.26.2
+  tabix: '1.12'
+FILTER_MANTA:
+  perl: 5.26.2
+FILTER_MANTA_TUMOR:
+  perl: 5.26.2
+FREEBAYES:
+  freebayes: 1.3.5
+  perl: 5.26.2
+  vcffilter: 1.0.2
+GATK2VCF:
+  python: 3.9.2
+GATKCOV_BAF:
+  gatk4: 4.1.9.0-SNAPSHOT
+GATKCOV_CALL:
+  gatk4: 4.1.9.0-SNAPSHOT
+GATKCOV_COUNT:
+  gatk4: 4.1.9.0-SNAPSHOT
+GENEFUSE:
+  genefuse: 0.8.0
+GENEFUSE_JSON_TO_VCF:
+  python: 3.9.2
+JOIN_FUSIONS:
+  svdb: 2.2.0
+JOIN_TUMOR:
+  svdb: 2.2.0
+LOWCOV:
+  sambamba: 0.8.0
+MANTA:
+  manta: 1.6.0
+  python: 2.7.15
+MANTA_FUSIONS:
+  manta: 1.6.0
+  python: 2.7.15
+MARKDUP:
+  sentieon: '202112'
+MARK_GERMLINES:
+  perl: 5.26.2
+MERGE_GATK_TUMOR:
+  perl: 5.26.2
+MERGE_GENS:
+  bedtools: 2.30.0
+  bgzip: '1.12'
+  tabix: '1.12'
+MSISENSOR:
+  msisensor-pro: 1.2.0
+PON_FILTER:
+  perl: 5.26.2
+SCARHRD:
+  Rscript: 4.1.0
+SENTIEON_QC:
+  sentieon: '202112'
+SEQTK:
+  seqtk: 1.3-r106
+SNPEFF:
+  snpEff: 4.3t
+VARDICT:
+  perl: 5.26.2
+  vardict: 1.8.2
+Workflow:
+  Nextflow: 23.04.2
+  SomaticPanelPipeline: 1.0dev

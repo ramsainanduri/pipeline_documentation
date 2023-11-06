@@ -1,0 +1,33 @@
+theme:
+  name: readthedocs
+  logo: https://raw.githubusercontent.com/ramsainanduri/pipeline_documentation/dev/templates/rs-logo-color.svg
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+plugins:
+  - search:
+      indexing: 'full'
+  - mkdocstrings:
+      handlers:
+        # See: https://mkdocstrings.github.io/python/usage/
+        python:
+          options:
+            docstring_style: sphinx
+markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.details
+  - toc:
+      permalink: True
+  - markdown_include.include:
+      base_path: .
+  - admonition
+
+extra:
+  generator: false
+
+extra_css:
+  - extra.css
+  
+copyright: Copyright &copy; 2023 | Center for Molecular Diagnostics (CMD) | Region Skåne | Sölvegatan 23B, Lund.

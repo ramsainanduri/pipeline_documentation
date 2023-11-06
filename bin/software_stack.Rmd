@@ -1,7 +1,0 @@
-# Software Stack
-
-```{r software stack, echo=FALSE,warning=FALSE, message=FALSE, results='asis'}
-software_list = read.table(file = mapped_tools_versions, sep = '\t', header = TRUE, stringsAsFactors = FALSE, check.names=F)
-kable(software_list,booktabs=TRUE,  escape=FALSE,row.names=FALSE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover",  "condensed", "responsive"),full_width = F, position = "center")
-```  

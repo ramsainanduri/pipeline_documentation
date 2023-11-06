@@ -1,0 +1,61 @@
+AGGREGATE_VCFS:
+  perl: 5.26.2
+ANNOTATE_VEP:
+  perl: 5.26.1
+BQSR_UMI:
+  sentieon: '202112'
+BWA_UMI:
+  bwa: 0.7.17-r1188
+  sentieon: '202112'
+CNVKIT_BATCH:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_CALL:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_GENS:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CNVKIT_PLOT:
+  cnvkit: 0.9.9
+  python: 3.7.1
+CONCATENATE_VCFS:
+  vcftools: 0.1.16
+  vt-decompose: '0.5'
+  vt-normalize: '0.5'
+CONTAMINATION:
+  perl: 5.28.1
+CUSTOM_DUMPSOFTWAREVERSIONS:
+  python: 3.11.0
+  yaml: '6.0'
+FILTER_FOR_CNV:
+  bedtools: 2.30.0
+  bgzip: '1.12'
+  perl: 5.26.2
+  tabix: '1.12'
+FREEBAYES:
+  freebayes: 1.3.5
+  perl: 5.26.2
+  vcffilter: 1.0.2
+LOWCOV:
+  sambamba: 0.8.0
+MARKDUP:
+  sentieon: '202112'
+MARK_GERMLINES:
+  perl: 5.26.2
+MERGE_GENS:
+  bedtools: 2.30.0
+  bgzip: '1.12'
+  tabix: '1.12'
+PON_FILTER:
+  perl: 5.26.2
+SENTIEON_QC:
+  sentieon: '202112'
+TNSCOPE:
+  sentieon: '202010.01'
+VARDICT:
+  perl: 5.26.2
+  vardict: 1.8.2
+Workflow:
+  Nextflow: 23.04.2
+  SomaticPanelPipeline: 1.0dev
