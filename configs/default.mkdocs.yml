@@ -15,6 +15,9 @@ plugins:
           options:
             docstring_style: sphinx
 markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.details
   - toc:
       permalink: True
   - markdown_include.include:
@@ -23,5 +26,8 @@ markdown_extensions:
 
 extra:
   generator: false
+
+extra_css:
+  - extra.css
   
 copyright: Copyright &copy; 2023 | Center for Molecular Diagnostics (CMD) | Region Skåne | Sölvegatan 23B, Lund.

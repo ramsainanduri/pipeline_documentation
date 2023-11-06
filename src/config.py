@@ -14,6 +14,7 @@ class Config:
         GITHUB_URL (str): The URL for the GitHub repository for the pipeline documentation project.
         GITHUB_PAGES_YAML (str): The file path for the default GitHub Pages configuration file.
         PYTHON_REQUIREMENTS (str): The file path for the Python requirements file.
+        EXTRA_CSS (str): The file path for the extra CSS file.
 
     Methods:
         __init__(self, mkdocs=None, readthedocs=None): Initializes a new Config instance with optional mkdocs and readthedocs file paths.
@@ -22,13 +23,14 @@ class Config:
         load_yaml(self, file_path): Loads a YAML file at the specified file path and returns its contents as a dictionary.
     """
 
-    MKDOCS_YAML = 'configs/default.mkdocs.yaml'
+    MKDOCS_YAML = 'configs/default.mkdocs.yml'
     READTHEDOCS_YAML = 'configs/default.readthedocs.yaml'
     TOOL_DESCRIPTIONS = 'static/files/tool_descriptions.tsv'
     PIPELINE_YAML = 'static/templates/pipeline.yaml'
     GITHUB_URL = 'https://github.com/ramsainanduri/pipeline_documentation'
     GITHUB_PAGES_YAML = 'configs/default.github.pages.yaml'
     PYTHON_REQUIREMENTS = 'static/files/requirements.txt'
+    EXTRA_CSS = 'static/css/extra.css'
 
     def __init__(self, mkdocs=None, readthedocs=None):
         """

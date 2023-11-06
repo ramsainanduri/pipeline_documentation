@@ -79,6 +79,7 @@ def main():
     
         shutil.copyfile(cfg.readthedocs, os.path.join(args.project_dir, ".readthedocs.yaml"))
         shutil.copyfile(cfg.PYTHON_REQUIREMENTS, os.path.join(args.project_dir, "docs/requirements.txt"))
+        shutil.copyfile(cfg.EXTRA_CSS, os.path.join(args.project_dir, "docs/extra.css"))
 
 
 if __name__ == "__main__":

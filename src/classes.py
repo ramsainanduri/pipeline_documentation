@@ -286,6 +286,7 @@ class MkDocsProfileGenerator(FileParser):
                 self.generate_section_files(id, section_data)
 
         # Create the mkdocs.yml file and append the nav structure with the config settings
+
         mkdocs_final = {
             'site_name': pipeline_data.get('pipeline', {}).get('info', {}).get('name', 'Documentation Site'),
             'site_url': pipeline_data.get('pipeline', {}).get('info', {}).get('git_repo', ''),
@@ -296,9 +297,9 @@ class MkDocsProfileGenerator(FileParser):
         if self.mkdocs_cfg:
             mkdocs_final.update(self.mkdocs_cfg)
 
-        mkdocs_yml_path = os.path.join(self.project_dir, 'mkdocs.yaml')
+        mkdocs_yml_path = os.path.join(self.project_dir, 'mkdocs.yml')
         with open(mkdocs_yml_path, 'w') as mkdocs_yml_file:
-            yaml.dump(mkdocs_final, mkdocs_yml_file, default_flow_style=False, sort_keys=False)
+            yaml.dump(mkdocs_final, mkdocs_yml_file, default_flow_style=False, sort_keys=False, indent=2)
 
         print("MkDocs project structure and configuration created.")
 
