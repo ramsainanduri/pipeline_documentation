@@ -1,38 +1,34 @@
+## Pipeline Description
 
-
-# Pipeline Info  
-
-<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> Info </th>
-   <th style="text-align:left;"> Description </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> **Name** </td>
-   <td style="text-align:left;"> Pipeline Documentation </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> **Version** </td>
-   <td style="text-align:left;"> v1.1.0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> **Author** </td>
-   <td style="text-align:left;"> Ram Sai Nanduri </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> **Author Email** </td>
-   <td style="text-align:left;"> Ram.Nanduri@skane.se </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> **Git Repo** </td>
-   <td style="text-align:left;"> https://github.com/ramsainanduri/pipeline_documentation </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> **Server Location** </td>
-   <td style="text-align:left;"> /data/bnf/dev/ram/Pipelines/validation_reports/pipeline_documentation </td>
-  </tr>
-</tbody>
+<div class="table table-striped table-bordered table-hover table-condensed table-responsive">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Info</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>Pipeline Documentation</td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>v1.1.0</td>
+    </tr>
+    <tr>
+      <td>author</td>
+      <td>Ram Sai Nanduri</td>
+    </tr>
+    <tr>
+      <td>author_email</td>
+      <td>Ram.Nanduri@skane.se</td>
+    </tr>
+    <tr>
+      <td>git_repo</td>
+      <td>https://github.com/ramsainanduri/pipeline_documentation</td>
+    </tr>
+  </tbody>
 </table>
+</div>

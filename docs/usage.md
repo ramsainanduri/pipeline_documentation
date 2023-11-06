@@ -1,13 +1,15 @@
-
 # Usage
 
-To generate offline HTML documentation and an online Markdown(MD) file in your project folder, clone the repo and execute the bash script bin/runMe.sh.  
+## How to run the pipeline
+
+To generate online Markdown(MD) file in your project folder, clone the repo and execute the python script src/main.py.
 
 To learn how to parse parameters for the script, run, 
 
-`bin/runMe.sh -h`
+`python3 src/main.py -h`
 
 To create an example script using the provided template files in the repo location, run,
 
-`bin/runMe.sh -e`
- 
+`python3 src/main.py -e`
+
+

@@ -1,5 +1,0 @@
-# Analysis Workflow  
-
-Schematic diagram showing the main steps of the analysis method followed to perform the data analysis.    
-
-![workflow](`r params$pipeline$workflow`)
